@@ -146,8 +146,8 @@ export default {
         this.showList = false
       }
     },
-    value (newValue) {
-      if (!this.isSelectedValue(newValue) ) {
+    value (newValue, oldValue) {
+      if (oldValue !== null || !this.isSelectedValue(newValue) ) {
         this.onSelectItem(newValue)
         this.searchText = this.getLabel(newValue)
       }
